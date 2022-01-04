@@ -1,8 +1,8 @@
 
 const mix = require('laravel-mix');
+const del = require('del');
 const glob = require('glob');
-
-
+let project_name = require("path").basename(__dirname);
 let production = mix.inProduction();
 
 
@@ -43,19 +43,19 @@ for(let i = 0; i < length; i++) {
 
 // ------------- Other --------------
 
-mix.copy('resources/images', 'public/images')
-    .webpackConfig(require('./webpack.config'))
+mix.webpackConfig(require('./webpack.config'))
     .sourceMaps(!production, 'source-map')
     .disableNotifications()
     .browserSync({
-        proxy: 'crm-hpi',
-        host: 'crm-hpi',
+        proxy: project_name,
+        host: project_name,
         notify: false,
         open: 'external'
     });
 
 if (production) {
     mix.version();
+    del(['public/js', 'public/css']);
     //mix.version(['public/images', 'public/Admin/**/*.{js,css,png,jpg,gif,svg}']);
 }
 
