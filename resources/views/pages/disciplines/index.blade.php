@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+
 @section('title', 'Disciplines')
+
+@section('styles')
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="{{ mix('css/pages/disciplines/index.css') }}">
+@endsection
+
 
 @section('content')
 	<div class="disciplines container">
@@ -46,7 +53,7 @@
 			</table>
 			<div class="clearfix">
 				<div class="hint-text">Показано <b>{{ $disciplines->count() }}</b> из <b>{{ $disciplines->total() }}</b> записей</div>
-				{{ $disciplines->links('includes.pagination-bootstrap-4') }}
+				{{ $disciplines->links('includes.pagination') }}
 			</div>
 		</div>
 	</div>

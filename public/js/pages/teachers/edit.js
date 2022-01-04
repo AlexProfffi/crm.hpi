@@ -1,0 +1,1 @@
+(()=>{$(".teachers-edit .disciplines").select2();var e=document.querySelector(".teachers-edit img.image-preview");if(e){var t=document.querySelector(".teachers-edit .upload-file");e.onclick=function(){t.click()},t.onchange=function(t){var c=new FileReader;c.onload=function(t){e.src=t.target.result},c.readAsDataURL(t.target.files[0])}}})();

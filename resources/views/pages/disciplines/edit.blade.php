@@ -1,6 +1,19 @@
 @extends('layouts.app')
 
+
 @section('title', 'Edit discipline')
+
+@section('scripts')
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" defer></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+	<script src="{{ mix('js/pages/disciplines/edit.js') }}" defer></script>
+@endsection
+
+@section('styles')
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<link rel="stylesheet" href="{{ mix('css/pages/disciplines/edit.css') }}">
+@endsection
+
 
 @section('content')
 	<form action="{{ route('disciplines.update', $discipline->id) }}" method="POST" enctype="multipart/form-data" class="disciplines-edit content">

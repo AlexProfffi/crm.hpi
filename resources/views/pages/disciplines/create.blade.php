@@ -1,9 +1,20 @@
 
 @extends('layouts.app')
 
+
 @section('title', 'Create discipline')
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+@section('scripts')
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" defer></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+	<script src="{{ mix('js/pages/disciplines/create.js') }}" defer></script>
+@endsection
+
+@section('styles')
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<link rel="stylesheet" href="{{ mix('css/pages/disciplines/create.css') }}">
+@endsection
+
 
 @section('content')
 	<form action="{{ route('disciplines.store') }}" method="POST" class="disciplines-create content">
@@ -27,11 +38,11 @@
 							</div>
 							<div class="form-group">
 								<label>Дата начала</label>
-								<input name="start_date" class="form-control" placeholder="Введите дату и время в формате: YYYY-MM-DD hh:mm:ss">
+								<input name="start_date" class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Дата окончания</label>
-								<input name="end_date" class="form-control" placeholder="Введите дату и время в формате: YYYY-MM-DD hh:mm:ss">
+								<input name="end_date" class="form-control">
 							</div>
 						</div>
 

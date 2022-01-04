@@ -5,14 +5,9 @@ module.exports = {
 
     resolve: {
         alias: {
-            '@': path.resolve('resources/js'),
-            '~': path.resolve('node_modules'),
-            'resources/lang': path.resolve('resources/lang'),
+             'resources/js': path.resolve('resources/js'),
         },
-        // fallback: {
-        //     fs: false,
-        //     crypto: false
-        // },
+
     },
 
     plugins: [

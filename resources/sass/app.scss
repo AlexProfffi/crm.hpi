@@ -1,22 +1,17 @@
 
-// ------ Include modules(npm, includes) -------
+// ------ NPM -------
 
-@import "includes/reset";
-@import '~bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 
-// ------ Include modules(pages) -------
+// ------ Includes -------
 
-@import "pages/teachers/index";
-@import "pages/teachers/create";
-@import "pages/teachers/edit";
-@import "pages/disciplines/index";
-@import "pages/disciplines/create";
-@import "pages/disciplines/edit";
+@import "resources/sass/includes/reset";
 
-// ------ App scss -------
 
-.app-layout {
+// ------ App -------
+
+.app {
 
 
 	// ------ Main nav -------

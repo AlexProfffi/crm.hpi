@@ -17,7 +17,7 @@ class TeacherSeeder extends Seeder
     {
     	for($i = 1; $i <= 6; ++$i) {
 
-			Teacher::factory()->create(['photo' => "/images/teachers/teacher{$i}.jpg"]);
+			Teacher::factory()->create(['photo' => "/images/pages/teachers/teacher{$i}.jpg"]);
 		}
     }
 }

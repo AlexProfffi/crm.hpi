@@ -1,4 +1,20 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js?id=ccea058c989c5a436c7a",
+    "/js/pages/disciplines/create.js": "/js/pages/disciplines/create.js?id=fbec4abba4042e6004d7",
+    "/js/pages/disciplines/edit.js": "/js/pages/disciplines/edit.js?id=fbec4abba4042e6004d7",
+    "/js/pages/teachers/create.js": "/js/pages/teachers/create.js?id=93f8222db38d906b9dc4",
+    "/js/pages/teachers/edit.js": "/js/pages/teachers/edit.js?id=bedaf41bf171c1ba2572",
+    "/css/pages/teachers/create.css": "/css/pages/teachers/create.css?id=3751f1546209822e0941",
+    "/css/pages/disciplines/index.css": "/css/pages/disciplines/index.css?id=d5de83d624a772998a10",
+    "/css/pages/disciplines/edit.css": "/css/pages/disciplines/edit.css?id=c5e133b34e9330f0a5da",
+    "/css/pages/disciplines/create.css": "/css/pages/disciplines/create.css?id=09d7ad6e916b25a513a7",
+    "/css/app.css": "/css/app.css?id=02019bb2f9da4f78e286",
+    "/css/pages/teachers/index.css": "/css/pages/teachers/index.css?id=0cee357591ab89b8721d",
+    "/css/pages/teachers/edit.css": "/css/pages/teachers/edit.css?id=41ef2260fda88a4bccd2",
+    "/images/pages/teachers/teacher1.jpg": "/images/pages/teachers/teacher1.jpg?id=3c8f47729731ec1668d3",
+    "/images/pages/teachers/teacher2.jpg": "/images/pages/teachers/teacher2.jpg?id=a31b2651edd4821b22cf",
+    "/images/pages/teachers/teacher3.jpg": "/images/pages/teachers/teacher3.jpg?id=fbde5c54ff31202c714c",
+    "/images/pages/teachers/teacher4.jpg": "/images/pages/teachers/teacher4.jpg?id=2fe81e3280c21bd3d3b6",
+    "/images/pages/teachers/teacher5.jpg": "/images/pages/teachers/teacher5.jpg?id=7b9b012094c9fa9032ed",
+    "/images/pages/teachers/teacher6.jpg": "/images/pages/teachers/teacher6.jpg?id=db8d80399f9d06ac97bd"
 }

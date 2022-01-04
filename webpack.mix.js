@@ -1,22 +1,71 @@
-const mix = require('laravel-mix');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+const mix = require('laravel-mix');
+const glob = require('glob');
+require('@chiiya/laravel-mix-imagemin');
+
+
+
 let production = mix.inProduction();
 
-mix.js('resources/js/app.js', 'public/js')
-    .copy('resources/images', 'public/images')
-    .sass('resources/sass/app.scss', 'public/css').options({
+
+// ------------- Don't generate license file --------------
+
+mix.options({
+    terser: {
+        extractComments: false,
+    }
+});
+
+
+// ------------- Js glob --------------
+
+let jsFiles = glob.sync('resources/js/**/*.js', {"ignore": 'resources/js/includes/**'});
+
+let length = jsFiles.length;
+
+for(let i = 0; i < length; i++) {
+
+    mix.js(jsFiles[i], jsFiles[i].replace('resources', 'public'));
+}
+
+
+// ------------- Scss glob --------------
+
+let scssFiles = glob.sync('resources/sass/**/*.scss', {"ignore": 'resources/sass/includes/**'});
+
+length = scssFiles.length;
+
+for(let i = 0; i < length; i++) {
+
+    mix.sass(scssFiles[i], scssFiles[i].replace('resources/sass', 'public/css').replace('.scss', '.css')).options({
         processCssUrls: false
-    })
+    });
+}
+
+
+// ------------- Other --------------
+
+mix.imagemin({
+        patterns: [
+            {
+                from: '**/*',
+                to: 'images',
+                context: 'resources/images',
+            },
+        ],
+    },
+    {
+        pngquant: {
+            quality: '95-100'
+        }
+    },
+    // {plugins: [
+    //     imageminMozjpeg({
+    //         quality: 100,
+    //         progressive: true
+    //     })
+    // ]}
+    )
     .webpackConfig(require('./webpack.config'))
     .sourceMaps(!production, 'source-map')
     .disableNotifications()
@@ -28,6 +77,9 @@ mix.js('resources/js/app.js', 'public/js')
     });
 
 if (production) {
-    mix.version(['public/images', 'public/storage']);
+    mix.version();
     //mix.version(['public/images', 'public/Admin/**/*.{js,css,png,jpg,gif,svg}']);
 }
+
+
+

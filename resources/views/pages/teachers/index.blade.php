@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+
 @section('title', 'Teachers')
+
+@section('styles')
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="{{ mix('css/pages/teachers/index.css') }}">
+@endsection
+
 
 @section('content')
 	<div class="teachers container">
@@ -38,7 +45,7 @@
 									<br>
 								@endforeach
 							</td>
-							<td><img class="img-size" src="{{ mix($teacher->photo) }}" alt=""></td>
+							<td><img class="img-size" src="{{ $teacher->photo }}" alt=""></td>
 							<td>
 								<div class="d-flex">
 									<a href="{{ route('teachers.edit', $teacher->id) }}" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -55,7 +62,7 @@
 			</table>
 			<div class="clearfix">
 				<div class="hint-text">Показано <b>{{ $teachers->count() }}</b> из <b>{{ $teachers->total() }}</b> записей</div>
-				{{ $teachers->links('includes.pagination-bootstrap-4') }}
+				{{ $teachers->links('includes.pagination') }}
 			</div>
 		</div>
 	</div>

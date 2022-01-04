@@ -1,7 +1,19 @@
 
 @extends('layouts.app')
 
+
 @section('title', 'Create teacher')
+
+@section('scripts')
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+	<script src="{{ mix('js/pages/teachers/create.js') }}" defer></script>
+@endsection
+
+@section('styles')
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="{{ mix('css/pages/teachers/create.css') }}">
+@endsection
+
 
 @section('content')
 	<form action="{{ route('teachers.store') }}" method="POST" enctype="multipart/form-data" class="teachers-create content">
