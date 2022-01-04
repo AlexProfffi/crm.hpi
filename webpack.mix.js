@@ -1,8 +1,6 @@
 
 const mix = require('laravel-mix');
 const glob = require('glob');
-require('@chiiya/laravel-mix-imagemin');
-
 
 
 let production = mix.inProduction();
@@ -45,27 +43,7 @@ for(let i = 0; i < length; i++) {
 
 // ------------- Other --------------
 
-mix.imagemin({
-        patterns: [
-            {
-                from: '**/*',
-                to: 'images',
-                context: 'resources/images',
-            },
-        ],
-    },
-    {
-        pngquant: {
-            quality: '95-100'
-        }
-    },
-    // {plugins: [
-    //     imageminMozjpeg({
-    //         quality: 100,
-    //         progressive: true
-    //     })
-    // ]}
-    )
+mix.copy('resources/images', 'public/images')
     .webpackConfig(require('./webpack.config'))
     .sourceMaps(!production, 'source-map')
     .disableNotifications()
