@@ -52,10 +52,7 @@
 							</div>
 							<div class="form-group">
 								<label>Дисциплины</label>
-								<select name="disciplines_id[]" multiple="multiple" class="disciplines" style="width: 100%;">
-									@foreach($teacher->disciplines as $discipline)
-										<option selected value="{{ $discipline->id }}">{{ $discipline->name }}</option>
-									@endforeach
+								<select data-disciplines-id="{{ json_encode($teacher->disciplines_id) }}"  name="disciplines_id[]" multiple="multiple" class="disciplines" style="width: 100%;">
 									@foreach($disciplines as $discipline)
 										<option value="{{ $discipline->id }}">{{ $discipline->name }}</option>
 									@endforeach

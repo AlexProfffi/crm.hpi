@@ -41,7 +41,6 @@ class TeacherController extends Controller
     {
         $form = $request->all();
 
-
 		Validator::make($form, [
 			'name' => ['required', 'min:3', 'max:20'],
 			'surname' => ['required', 'min:3', 'max:20'],
@@ -92,11 +91,15 @@ class TeacherController extends Controller
 
     public function edit($id)
     {
+
         $teacher = $this->teacher
-			->firstTeacherDisciplinesTE($id);
+			->firstTeacherTE($id);
 
 		$disciplines = $this->discipline
 			->getDisciplinesTE();
+
+		$teacher->disciplines_id = $teacher->disciplines()
+			->pluck('id');
 
 
         return view('pages.teachers.edit', compact('teacher', 'disciplines'));

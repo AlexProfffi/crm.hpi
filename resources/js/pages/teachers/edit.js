@@ -1,7 +1,14 @@
 
+
 // ------------- Select2 --------------
 
-$('.teachers-edit .disciplines').select2();
+let selectForm = $('.teachers-edit .disciplines');
+
+selectForm.select2();
+
+let disciplines_id = JSON.parse(selectForm.attr('data-disciplines-id'));
+
+selectForm.val(disciplines_id).trigger('change');
 
 
 // ------------- Loading and previewing an image --------------

@@ -30,6 +30,7 @@
     "dependencies": {
         "del": "^6.0.0",
         "glob": "^7.2.0",
-        "imagemin-mozjpeg": "^8.0.0"
+        "imagemin-mozjpeg": "^8.0.0",
+        "webpack-open-browser-plugin": "^1.0.7"
     }
 }

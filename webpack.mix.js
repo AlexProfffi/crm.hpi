@@ -2,7 +2,7 @@
 const mix = require('laravel-mix');
 const del = require('del');
 const glob = require('glob');
-let project_name = require("path").basename(__dirname);
+// let project_name = require("path").basename(__dirname);
 let production = mix.inProduction();
 
 
@@ -47,10 +47,9 @@ mix.webpackConfig(require('./webpack.config'))
     .sourceMaps(!production, 'source-map')
     .disableNotifications()
     .browserSync({
-        proxy: project_name,
-        host: project_name,
+        proxy: process.env.APP_URL,
         notify: false,
-        open: 'external'
+        open: false
     });
 
 if (production) {

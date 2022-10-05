@@ -21,7 +21,7 @@ class DisciplineController extends Controller
     	$disciplines = $this->discipline
 			->paginateDisciplinesDI();
 
-
+		
         return view('pages.disciplines.index', compact('disciplines'));
     }
 

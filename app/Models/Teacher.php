@@ -42,12 +42,21 @@ class Teacher extends Model
 			->select($columns)
 			->with('disciplines:id,name')
 			->paginate(4);
+//			->through(fn ($teacher) => [
+//				'id' => $teacher->id,
+//				'name' => $teacher->name,
+//				'surname' => $teacher->surname,
+//				'email' => $teacher->email,
+//				'photo' => $teacher->photo,
+//			]);
+//		dd($teachers->links());
+		//dd($teachers->links('includes.pagination'));
 
     	return $teachers;
 	}
 
 
-	public function firstTeacherDisciplinesTE($id) {
+	public function firstTeacherTE($id) {
 
 		$columns = [
 			'id',
@@ -60,7 +69,6 @@ class Teacher extends Model
 		$teacher = $this
 			->select($columns)
 			->where('id', $id)
-			->with('disciplines:id,name')
 			->first();
 
 

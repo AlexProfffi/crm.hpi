@@ -4,6 +4,8 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
+const OpenBrowserPlugin = require('webpack-open-browser-plugin');
+
 
 module.exports = {
 
@@ -15,6 +17,9 @@ module.exports = {
     },
 
     plugins: [
+        new OpenBrowserPlugin({
+            url: process.env.APP_URL
+        }),
         new CopyWebpackPlugin({
             patterns: [
                 {

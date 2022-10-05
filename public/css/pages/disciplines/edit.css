@@ -1,8 +1,1 @@
-.disciplines-edit .edit-discipline {
-  padding-top: 1rem;
-  text-align: center;
-  color: black;
-  font-weight: bold;
-}
-
-/*# sourceMappingURL=edit.css.map*/
+.disciplines-edit .edit-discipline{color:#000;font-weight:700;padding-top:1rem;text-align:center}.disciplines-edit .errors{color:#dc3545;font-size:.875em;margin-top:.25rem}

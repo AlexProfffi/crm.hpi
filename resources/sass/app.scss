@@ -1,7 +1,7 @@
 
 // ------ NPM -------
 
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap';
 
 
 // ------ Includes -------
@@ -25,12 +25,4 @@
 		font-weight: 600;
 	}
 
-
-	// ------ Errors validation -------
-
-	.errors {
-		margin-top: .25rem;
-		font-size: .875em;
-		color: #dc3545;
-	}
 }

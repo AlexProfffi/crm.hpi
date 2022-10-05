@@ -10,6 +10,7 @@
 
 
 @section('content')
+
 	<div class="teachers container">
 		<div class="table-wrapper">
 			<div class="table-title">
@@ -66,6 +67,4 @@
 			</div>
 		</div>
 	</div>
-
-
 @endsection

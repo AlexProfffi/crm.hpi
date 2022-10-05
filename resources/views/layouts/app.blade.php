@@ -18,6 +18,11 @@
 
 </head>
 <body class="app">
+
+    @if (app()->isLocal())
+        <script src="http://localhost:3000/browser-sync/browser-sync-client.js" async></script>
+    @endif
+
     <div id="app">
         <nav class="container pt-4">
             <ul class="main-nav">
@@ -31,11 +36,7 @@
                         Дисциплины
                     </a>
                 </li>
-{{--                <li>--}}
-{{--                    <a :href="route('categories')" class="ml-4 text-muted">--}}
-{{--                        Категории--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+
             </ul>
         </nav>
 

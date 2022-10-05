@@ -1,1 +1,0 @@
-{"version":3,"file":"css/pages/disciplines/edit.css","mappings":"AAEC;EACC;EACA;EACA;EACA;AADF,C","sources":["webpack:///./resources/sass/pages/disciplines/edit.scss"],"sourcesContent":[".disciplines-edit {\n\n\t.edit-discipline {\n\t\tpadding-top: 1rem;\n\t\ttext-align: center;\n\t\tcolor: black;\n\t\tfont-weight: bold;\n\t}\n\n}"],"names":[],"sourceRoot":""}
