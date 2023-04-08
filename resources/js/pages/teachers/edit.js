@@ -1,5 +1,4 @@
 
-
 // ------------- Select2 --------------
 
 let selectForm = $('.teachers-edit .disciplines');

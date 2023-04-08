@@ -44,7 +44,13 @@ for(let i = 0; i < length; i++) {
 // ------------- Other --------------
 
 mix.webpackConfig(require('./webpack.config'))
-    .sourceMaps(!production, 'source-map')
+    .options({
+        hmrOptions: {
+            host: 'localhost',
+            port: '3001'
+        },
+    })
+    //.sourceMaps(!production, 'source-map')
     .disableNotifications()
     .browserSync({
         proxy: process.env.APP_URL,
